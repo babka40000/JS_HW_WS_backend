@@ -1,12 +1,20 @@
 const http = require('http');
 const Koa = require('koa');
-const serve = require('koa-static');
 const WS = require('ws');
+const { createServer } = require('https');
+const { readFileSync } = require('fs');
 
 const app = new Koa();
 
 const port = process.env.PORT|7070;
 const server = http.createServer(app.callback());
+
+// const server = createServer({
+//   cert: readFileSync('/path/to/cert.pem'),
+//   key: readFileSync('/path/to/key.pem')
+// });
+
+// const server = createServer();
 
 const wsServer = new WS.Server({
   server
