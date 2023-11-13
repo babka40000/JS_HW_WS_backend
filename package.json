@@ -1,0 +1,25 @@
+{
+  "name": "js_hw_http_backend",
+  "version": "1.0.0",
+  "description": "http backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint",
+    "start": "forever --minUptime 5000 --spinSleepTime 3000 server.js",
+    "watch": "forever --minUptime 5000 --spinSleepTime 3000 -w server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.52.0",
+    "forever": "^4.0.3"
+  },
+  "dependencies": {
+    "koa": "^2.14.2",
+    "koa-body": "^6.0.1",
+    "koa-body-parser": "^0.2.1",
+    "koa-static": "^5.0.0",
+    "ws": "^8.14.2"
+  }
+}
