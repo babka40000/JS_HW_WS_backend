@@ -1,10 +1,11 @@
 const http = require('http');
 const Koa = require('koa');
+const serve = require('koa-static');
 const WS = require('ws');
 
 const app = new Koa();
 
-const port = process.env.PORT;
+// const port = process.env.PORT;
 const server = http.createServer(app.callback());
 
 const wsServer = new WS.Server({
@@ -68,5 +69,5 @@ wsServer.on('connection', (ws) => {
   });
 });
 
-server.listen(port);
-console.log(port);
+server.listen();
+console.log(server);
