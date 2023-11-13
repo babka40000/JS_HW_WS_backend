@@ -70,3 +70,4 @@ wsServer.on('connection', (ws) => {
 });
 
 server.listen(port);
+console.log(port);
