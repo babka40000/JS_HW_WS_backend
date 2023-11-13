@@ -4,7 +4,7 @@ const WS = require('ws');
 
 const app = new Koa();
 
-const port = process.env.PORT || 7070;
+const port = process.env.PORT;
 const server = http.createServer(app.callback());
 
 const wsServer = new WS.Server({
@@ -69,3 +69,4 @@ wsServer.on('connection', (ws) => {
 });
 
 server.listen(port);
+console.log(port);
