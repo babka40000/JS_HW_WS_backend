@@ -1,27 +1,27 @@
-// const http = require('http');
-// const Koa = require('koa');
-// const WS = require('ws');
+const http = require('http');
+const Koa = require('koa');
+const WS = require('ws');
 const { createServer } = require('https');
 const { readFileSync } = require('fs');
 const { WebSocketServer } = require('ws');
 
-// const app = new Koa();
+const app = new Koa();
 
 const port = process.env.PORT|7070;
-// const server = http.createServer(app.callback());
+const server = http.createServer(app.callback());
 
 // const server = createServer({
 //   cert: readFileSync('/path/to/cert.pem'),
 //   key: readFileSync('/path/to/key.pem')
 // });
 
-const server = createServer();
+// const server = createServer({rejectUnauthorized: false, requestCert: true});
 
-// const wsServer = new WS.Server({
-//   server
-// });
+const wsServer = new WS.Server({
+  server
+});
 
-const wsServer = new WebSocketServer({ server });
+// const wsServer = new WebSocketServer({ server });
 
 function getCurrentDateTime() {
   const currentdate = new Date();
